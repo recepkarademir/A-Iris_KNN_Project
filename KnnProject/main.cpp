@@ -8,7 +8,7 @@
 	en iyi tür tahmini yapan K(komþuluk seviyesi) deðerini bulan C++ programý .
 	
 	
-	Versiyon : V3.0.1
+	Versiyon : V3.0.2
 */
 
 #include <iostream>

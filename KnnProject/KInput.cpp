@@ -9,7 +9,7 @@ short enYakinKomsuAlgoritmasi(int egitimSeti, int veriAdet)
 	for(int g=0;g<5;++g){cout<<"-----------------";} cout<<endl;
 	if((egitimSeti-1)>=(veriAdet/2))	// test setindeki bir veri için k deðeri (doðrulama + eðitim)  veri adeti kadar olabilir.
 	{
-		K_ISTE:cout<<"\nKaç yakýn komþu için tahmin yürütülmesini istiyorsun ( [1 , (doðrulama + eðitim) ] arasý deðer gir) ";
+		K_ISTE:cout<<"\nKaç yakýn komþu için tahmin yürütülmesini istiyorsun ( [1 , "<<egitimSeti<<" ] arasý deðer gir) ";
 		cout<<"\nDegeri girip entera bas : \n";
 		cin>>k;
 		
