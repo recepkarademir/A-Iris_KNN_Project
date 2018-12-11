@@ -1,38 +1,40 @@
 #include <iostream>
 #include <iomanip> 		// formatlý setw çýktýsý alabilmek için.
-#include "testVeri.h"
-#include "veriYazdir.h"
 #include <conio.h>		// getc() için.
+#include "veriYazdir.h"
+#include "KInput.h"	//  k deðerini kullanýcýdan alan kod kütüphanesi
+
 using namespace std;
 
-void testVeriFonk(int k,int egitimSeti,int dogrulamaSeti,int testSeti , float veriSeti[][5],int veriNitelik,float tahminYuzde)// komþuluk farklarý hesaplanacak.
+void testVeriFonk(int egitimSeti,int dogrulamaSeti,int testSeti , float veriSeti[][5],int veriNitelik,float tahminYuzde,bool shuffle_testi, int kEgitim)
 {
-	int testVeriIndisi;
-	
+	int testVeriIndisi; // test setindeki tahmin edilecek verinin sýra numarasýný tutan deðiþken.
 	system("cls");
 	verileriYazdir(veriSeti,(egitimSeti+dogrulamaSeti+testSeti),(egitimSeti+dogrulamaSeti-1));
-	
-	while(true)
+	cout<<"\nTest seti verileri yukarýdakilerdir.\n\n";
+	if(shuffle_testi==false)	// shuffle_testi==true ise veri setindeki veriler rastgele olarak karýþtýrýlmýþtýr.
 	{
-		cout<<"\n\n============================================================================";
+		cout<<"\n\nÖNCE VERÝLERÝN KARIÞTIRILMASI TAVSÝYE EDÝLÝR ! \n";
+	}
+	while(true) // test setindeki sýra numarasý dýþýnda baþka bir deðer girilmemeli.
+	{
+		cout<<"\n============================================================================";
 		cout<<"\nTest setindeki tahmin edilecek verinin sýra numarasýný gir ve entera bas :\n\n";
 		cin>>testVeriIndisi;
 		cout<<endl;
+		
 		if(testVeriIndisi<(egitimSeti+dogrulamaSeti) || testVeriIndisi>(egitimSeti+dogrulamaSeti+testSeti))
 		{
 			cout<< "\n\a Bu sýradaki veri test setinden deðil !"<<endl;
 		}
 		else
 		{
-			break;
+			break; // istenilen aralýkta bir sýra numarasý giridiyse program iþlemeye devam etsin.
 		}
 	}
+	int k=enYakinKomsuAlgoritmasi((egitimSeti+dogrulamaSeti),(egitimSeti+dogrulamaSeti+testSeti));
 	
-	
-	testVeriIndisi--;
-	
-	//SONUNDA V2 YAZAN YORUMLAR GÜNCEL
-	
+	testVeriIndisi--; // test setindeki tahmin edilecek verinin sýra numarasýný indis olarak iþlememiz gerekiyor.
 	
 	
 	cout<<"\n\n============================================================================\n";
@@ -42,12 +44,11 @@ void testVeriFonk(int k,int egitimSeti,int dogrulamaSeti,int testSeti , float ve
 	
 	
 	
-	float tmpFark=0 , toplamFark=0; // tmpFark : her hücre kýyaslama sonucunda bulunan farký tutar.        toplamFark:5 hücrenin tmpFark toplamlarýný tutar.V2
-	// egitim seti verileri veri seti karýþýk olduðu için ilk [0..74] elemanlarý olarak kullanýlacak.
-	// eðitim seti deðeri 150 tane veri için þuan 75 ,  dogrulamaSeti=38 ve testSeti=37 olacaktýr.
+	float tmpFark=0 , toplamFark=0; 
+	// tmpFark : her hücre kýyaslama sonucunda bulunan farký tutar.        toplamFark:5 hücrenin tmpFark toplamlarýný tutar.
+	
 	float farkDizisi[1][(egitimSeti+dogrulamaSeti)];  // farklar bu dizide tutulacak
-	// egitimSeti=75 deðerini tutuyor.   
-	int sutun=0;
+	// (egitimSeti+dogrulamaSeti) =113 deðerini tutuyor. 113 tane veri ile test setindeki verinin farklarý toplamý farkdizisinde saklanacak.
 	// egitim seti [0..74] arasýnda , doðrulamseti [75..112] arasýnda   , testSeti  [113..149]  arasýnda
 	
 	
@@ -55,7 +56,7 @@ void testVeriFonk(int k,int egitimSeti,int dogrulamaSeti,int testSeti , float ve
 	{
 		tmpFark=0;
 		toplamFark=0;
-		tmpFark = ( (veriSeti[j][sutun]) - (veriSeti[i][sutun]) );
+		tmpFark = ( (veriSeti[j][0]) - (veriSeti[i][0]) );
 		if(tmpFark<0)
 		{
 			toplamFark+=(-1*tmpFark); // farklarýn negatif olmamasý gerekli. vektör uzaklýðý negatif olmaz.
@@ -65,7 +66,7 @@ void testVeriFonk(int k,int egitimSeti,int dogrulamaSeti,int testSeti , float ve
 			toplamFark+=tmpFark;
 		}
 		
-		tmpFark = ((veriSeti[j][sutun+1])  - (veriSeti[i][sutun+1]) );
+		tmpFark = ((veriSeti[j][1])  - (veriSeti[i][1]) );
 		if(tmpFark<0)
 		{
 			toplamFark+=(-1*tmpFark); // farklarýn negatif olmamasý gerekli. vektör uzaklýðý negatif olmaz.
@@ -75,7 +76,7 @@ void testVeriFonk(int k,int egitimSeti,int dogrulamaSeti,int testSeti , float ve
 			toplamFark+=tmpFark;
 		}
 		
-		tmpFark = ( (veriSeti[j][sutun+2]) - (veriSeti[i][sutun+2]) );
+		tmpFark = ( (veriSeti[j][2]) - (veriSeti[i][2]) );
 		if(tmpFark<0)
 		{
 			toplamFark+=(-1*tmpFark); // farklarýn negatif olmamasý gerekli. vektör uzaklýðý negatif olmaz.
@@ -85,7 +86,7 @@ void testVeriFonk(int k,int egitimSeti,int dogrulamaSeti,int testSeti , float ve
 			toplamFark+=tmpFark;
 		}
 		
-		tmpFark = ( (veriSeti[j][sutun+3]) - (veriSeti[i][sutun+3]) );
+		tmpFark = ( (veriSeti[j][3]) - (veriSeti[i][3]) );
 		if(tmpFark<0)
 		{
 			toplamFark+=(-1*tmpFark); // farklarýn negatif olmamasý gerekli. vektör uzaklýðý negatif olmaz.
@@ -102,10 +103,9 @@ void testVeriFonk(int k,int egitimSeti,int dogrulamaSeti,int testSeti , float ve
 
 	float geciciFark[1][(egitimSeti+dogrulamaSeti)];
 	// veriler en yakýn komþu hesaplarken bozuluyor. Korunmasý ve guncel veri seti listelemesinin yapýldýðýnda bozulmuþ verilerin görünmemesi için.
-	
-	// çok boyutlu bir dizi kopyalanýrken copy() kullanýlabilir. memcpy() de kullanýlabilir V2
+	// çok boyutlu bir dizi kopyalanýrken copy() kullanýlabilir. memcpy() de kullanýlabilir
 	copy(&farkDizisi[0][0], &farkDizisi[0][0]+(egitimSeti+dogrulamaSeti),&geciciFark[0][0]); // dizi tamamen klonlanýyor.
-	// geciciFark dizisi her doðrulama verisi için en yakýn k tane komþusunun indisini tutuyor.
+	// geciciFark dizisi test edilecek veri için en yakýn k tane komþusunun indisini tutuyor.
 	
 	
 	
@@ -124,77 +124,81 @@ void testVeriFonk(int k,int egitimSeti,int dogrulamaSeti,int testSeti , float ve
 	cout<<"\n\n\n\n"<<asda<<"\n\n\n\n";
 	*/
 	
-
 	
 	float degistir=(float)veriNitelik; // degiþtir 5 oldu. 5 niteliðin(sepalW vs.) toplamý olduðu için en fazla fark toplamý 5 olduðunda komþu bulma iþlemi bu indiste yapýlmýþ demektir V2
 	float kucukSayi; // her kontrolde küçük sayýyý tutup diziye yazdýracaðýz.
 	int kucukVeriIndis;
 	int enKucukKNN[1][k]; // en yakýn komþularýn indislerinin tutulduðu yapý. 
 	
-	
-	
-		for(int z=0;z<k;++z) // k  defa kontrol yapýp k tane sütunu doldurulacak. bu for ikinci defa  çalýþtýðýnda en küçük ikinci knn komþunun indisi alýnacak
+
+	for(int z=0;z<k;++z) // k  defa kontrol yapýp k tane sütunu doldurulacak. bu for ikinci defa  çalýþtýðýnda en küçük ikinci knn komþunun indisi alýnacak
+	{
+		kucukSayi = geciciFark[0][0];
+		kucukVeriIndis = 0;
+		
+		for(int j=0;j<(egitimSeti+dogrulamaSeti);++j) // j= (egitimSeti+dogrulamaSeti) a kadar gidecek.
 		{
-			kucukSayi = geciciFark[0][0];
-			kucukVeriIndis = 0;
-			
-			for(int j=0;j<egitimSeti;++j) // j= egitimSeti
+			if(geciciFark[0][j] <= kucukSayi) // <=  alýrýz çünkü = olan en yakýn komþusu da olabilir.
 			{
-				if(geciciFark[0][j] <= kucukSayi) // <=  alýrýz çünkü = olan en yakýn komþusu da olabilir.
-				{
-					kucukSayi=geciciFark[0][j];//kucukSayi dan daha kucuk deger varsa kSayi ile deðiþtirilir.
-					kucukVeriIndis=j;// eðitim setindeki yakýn komþunun indisi j 'de  tutulur.
-				}
+				kucukSayi=geciciFark[0][j];//kucukSayi dan daha kucuk deger varsa kSayi ile deðiþtirilir.
+				kucukVeriIndis=j;// (egitimSeti+dogrulamaSeti) ndeki yakýn komþunun indisi j 'de  tutulur.
 			}
-			geciciFark[0][kucukVeriIndis]=degistir;// dizideki deðeri 5 yapýlýr. 5 yapýlýr çünkü en kucuk 2.  3.  4. vs aramalarda tekrar en kucuk diye yakalanmamasý için.
-			enKucukKNN[0][z]=kucukVeriIndis; // en kucuk deðerin indisi yedeklendi.
 		}
+		geciciFark[0][kucukVeriIndis]+=100;// dizideki deðeri 5 yapýlýr. 5 yapýlýr çünkü en kucuk 2.  3.  4. vs aramalarda tekrar en kucuk diye yakalanmamasý için.
+		// 5 yapýldýðýnda en küçük fark olarak 5ten küçük veriler mutlaka geciciFark[0][kucukVeriIndis] e atanýr.
+		enKucukKNN[0][z]=kucukVeriIndis; // en kucuk deðerin indisi yedeklendi.
+	}
 
-
-
-
-	int tahmin[1][3]; // doðrulama setinin hangi iris deðeri en fazla  tahmin yapýlýyor onu tutacak.
+	/* TEST AMAÇLI
 	
- // iris adetlerini tutan dizinin baþlangýçta 0 deðerleri tutmasý gerekir.
+	int b;
+	for(int a=0;a<k;++a)
+	{
+		b=enKucukKNN[0][a];
+		cout<<geciciFark[0][b]<<endl;
+	}
 	
-		tahmin[0][0]=0;
-		tahmin[0][1]=0;
-		tahmin[0][2]=0;
+	*/
+
+	int tahmin[1][3]={{0,0,0}}; // tahmin edilecek verinin hangi iris deðeri en baskýn onu tutacak.
+ 	// iris adetlerini tutan dizinin baþlangýçta 0 deðerleri tutmasý gerekir.
+
 	
 	
 		
 	short irisKodu; // en yakýn komþunun veri setindeki iris kodunu geçici tutmak için.
 	
-	
 		for(int j=0;j<k;++j) // her sütundaki iris adýný kontrol edip iris adlarýnýn sayýsýný tahmin dizisinde tutuyor.
 		{
 			// enKucukKNN[i][j] = en küçük verilerin konumlarýnýn tutulduklarý dizi. 
-			irisKodu = veriSeti[(enKucukKNN[0][j])][4];// bu satýr en yakýn komþunun veri setindeki iris kodunu öðrenmemizi saðlýyor.  4  = iris adýnýn tutulduðu sütünlar
+			irisKodu = veriSeti[(enKucukKNN[0][j])][4];// bu satýrda en yakýn komþunun veri setindeki iris kodunu öðrenmemizi saðlar.4 =iris adýnýn tutulduðu sütünlar
 			if(irisKodu==0)
 			{
-				tahmin[0][0] = ( ( tahmin[0][0]) +1 );
+				tahmin[0][0]++;
 			}
 			else if(irisKodu==1)
 			{
-				tahmin[0][1] = ( ( tahmin[0][1]) +1 );
+				tahmin[0][1]++;
 			}
 			else if(irisKodu==2)
 			{
-				tahmin[0][2] = ( ( tahmin[0][2]) +1 );
+				tahmin[0][2]++;
 			}
 			else
 			{
 				cout<<"\nIris ismi bellekte düzgün olarak kodlanmamýþ ! \n";
 			}
-		}		
-	
-
+		}
+				
+	// TEST AMAÇLI
+	/*for(int a=0;a<3;++a)
+	{
+		
+		cout<<tahmin[0][a]<<endl;
+	}*/
 	
 	int agirlikliTahmin[1][1];
-	int enBuyuk=0 , enBuyukIndis=0;
-						
-	enBuyuk = tahmin[0][0];
-	
+	int enBuyuk=0 , enBuyukIndis=0; // burada iris adýnýn aðýrlýklý olarak hangisi olduðunu buluyoruz.
 
 		enBuyuk = tahmin[0][0];
 		for(int r=0;r<3;++r)
@@ -205,6 +209,7 @@ void testVeriFonk(int k,int egitimSeti,int dogrulamaSeti,int testSeti , float ve
 				enBuyukIndis=r;
 			}
 		}
+		
 		if(enBuyukIndis==0) // en agirlikli iris adý taminini karar olarak kaydediyor.
 		{
 			agirlikliTahmin[0][0]=0;
@@ -218,11 +223,11 @@ void testVeriFonk(int k,int egitimSeti,int dogrulamaSeti,int testSeti , float ve
 			agirlikliTahmin[0][0]=2;
 		}
 	
-	// þimdi orijinal doðrulamadaki iris adýyla tahmin iris adlarýný kýyaslayýp tahmin yüzdesini çýktý olarak verelim.
-	
-		cout<<endl;
-		
-		cout<<setw(3)<<testVeriIndisi+1<<". sýra ("<<setw(3)<<testVeriIndisi<<".indisteki)"<<" Doðrulama verisinin iris adý : "<<setw(17);
+		float tahminYuzdeTest=0.0;
+		 
+		tahminYuzdeTest = (100.0/k)*tahmin[0][enBuyukIndis];
+		// þimdi orijinal test edilecek test verisinin iris adýyla tahmin yüzdesini çýktý olarak verelim.
+		cout<<endl<<setw(3)<<testVeriIndisi+1<<". sýra ("<<setw(3)<<testVeriIndisi<<".indisteki)"<<" Test verisinin iris adý : "<<setw(14);
 
 		if(veriSeti[testVeriIndisi][4]==0)
 		{
@@ -237,7 +242,7 @@ void testVeriFonk(int k,int egitimSeti,int dogrulamaSeti,int testSeti , float ve
 			cout<<"Iris-virginica";
 		}
 		
-		cout<<"  "<<"Tahmin edilen iris adý : "<<setw(17);
+		cout<<"   "<<"Tahmin edilen iris adý : "<<setw(14);
 		if(agirlikliTahmin[0][0]==0)
 		{
 			cout<<"Iris-setosa";
@@ -250,7 +255,7 @@ void testVeriFonk(int k,int egitimSeti,int dogrulamaSeti,int testSeti , float ve
 		{
 			cout<<"Iris-virginica";
 		}
-		if(veriSeti[testVeriIndisi][4]==agirlikliTahmin[0][0]) // her doðru tahmin için tahmin yüzdesi artýrýlýr.
+		if(veriSeti[testVeriIndisi][4]==agirlikliTahmin[0][0])
 		{
 			cout<<endl;
 		}
@@ -260,8 +265,17 @@ void testVeriFonk(int k,int egitimSeti,int dogrulamaSeti,int testSeti , float ve
 		}
 		
 
-	cout<<"\n\n============================================================================\n";	
-	cout<<"Doðruluk oraný % "<<tahminYuzde<<endl;
+	cout<<"\n\n============================================================================\n";
+	if(tahminYuzde==-1.0)
+	{
+		cout<<"Programýn genel tahmin doðruluk oraný bilinmiyor !"<<endl;
+	}
+	else
+	{
+		cout<<"Programýn genel tahmin doðruluk oraný  k = "<<kEgitim<<" için  % "<<tahminYuzde<<endl;
+	}
+	
+	cout<<"Test setindeki verinin k="<<k<<" için tahmin doðruluk oraný % "<<tahminYuzdeTest<<endl;
 	cout<<"Yanlýþ tahminin yanýnda X bulunur.\n============================================================================\n";
 	cout<<"\nDevam etmek için bir tuþa bas...";
 	

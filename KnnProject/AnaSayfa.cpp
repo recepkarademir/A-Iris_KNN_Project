@@ -1,5 +1,6 @@
 #include<iostream> // cin cout cerr kütüphanesi
-#include "windows.h" // sleep fonk için.
+#include "windows.h" // sleep fonksiyonu için.
+
 using namespace std;
 
 void Bilgi()

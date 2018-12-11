@@ -1,10 +1,9 @@
 #include<iostream>
-#include "veriSetlereAyir.h"
 #include"AnaSayfa.h" // prototiplerin kütüphenesi AnaSayfa.h da
 using namespace std;
 
-void veriSetlereAyirFonk(int *egitimSeti,int *dogrulamaSeti,int *testSeti,int veriAdet)
-{
+void veriSetlereAyirFonk(int *egitimSeti,int *dogrulamaSeti,int *testSeti,int veriAdet) // pointer þeklinde alýnýyor çünkü 
+{																						// main içinde de deðiþmesini istiyoruz.
 	*egitimSeti=veriAdet*0.50; 	// yukarý yuvarlama yapar. eðitim seti, toplam veri setinin %50 si kadar
 	*dogrulamaSeti=veriAdet*0.25;// doðrulama seti, toplam veri setinin ~%25 si kadar
 	*testSeti=veriAdet*0.25; 	// test seti, toplam veri setinin ~%25 si kadar

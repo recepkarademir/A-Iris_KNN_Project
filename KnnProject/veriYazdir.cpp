@@ -1,6 +1,5 @@
 #include <iostream>
 #include <iomanip> 		// formatlý setw çýktýsý alabilmek için.
-#include "veriYazdir.h"
 
 using namespace std;
 
@@ -11,7 +10,10 @@ void verileriYazdir(float veriSeti[][5] , int veriAdet , int inds)
 	if(inds!=0)
 	{
 		cout<<"Test seti verileri\n\n";
+		cout<<"Sýra             özellikler            Iris adlarý\n";
+		cout<<"=====================================================\n";
 	}
+
 	for(int sutun = 0;inds<veriAdet;++inds)
 	{
 		cout<<setw(3)<<inds+1<<" : "; // setw formatlý yazdýrmak için.  i+1 0. yerine 1 den baþlamasý için.

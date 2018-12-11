@@ -1,6 +1,6 @@
 #include <fstream>		// txt içerisindeki verileri okuyabilmek için.
 #include <iostream>
-#include "veriOku.h"
+
 using namespace std;
 
 int veriOkuFonk(float veriSeti[][5])
@@ -13,7 +13,7 @@ int veriOkuFonk(float veriSeti[][5])
 	{
 		system("cls");
 		cout<<" Dosya okuma basarisiz.";
-		abort();
+		exit(0);
 	}
 
 	string line;
@@ -77,7 +77,8 @@ int veriOkuFonk(float veriSeti[][5])
 		}
 		else
 		{
-			cout<<"Veri dosyasýndaki string veri duzgun islenemiyor !"<<endl;	
+			cout<<"Veri dosyasindaki string veri duzgun islenemiyor !"<<endl;
+			exit(0);	
 		}
 		satir++; // bir alt satýrdaki veriler okunacak.
 				

@@ -4,5 +4,6 @@
 // main içerisinde mainden önce tanýmlanmasý gerekenler struct veya prototip gibi. buraya yazýlmalýdýr.
 
 void Bilgi(); // AnaSayfa.cpp içindeki bir fonksiyonun prototipi tanýmlanmýþ.
-void KapanisBilgi();
+void KapanisBilgi(); // AnaSayfa.cpp içindeki bir fonksiyonun prototipi tanýmlanmýþ.
+
 #endif // zaten AnaSayfa kütüphanesini tanýmlýysa endif ile iþlem sonlandýrýlacak.

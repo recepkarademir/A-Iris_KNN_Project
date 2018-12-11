@@ -1,5 +1,5 @@
 #include <iostream>
-#include "standartizasyon.h"
+
 using namespace std;
 
 void standartizasyonfonk(float veriSeti[][5] , int veriAdet)
@@ -34,7 +34,7 @@ void standartizasyonfonk(float veriSeti[][5] , int veriAdet)
 	for(int i=0;i<veriAdet;++i) // min max bulunacak formül : standartize olacak veri = (veri - minimum veri) / (maximum veri- minimum veri)
 	{
 	
-	//max ve min deðer hýzlýca bulunacak.
+		//max ve min deðeri bulunacak.
 		if(veriSeti[i][sutun] < sepalLmindeger  )
 		{
 			sepalLmindeger = veriSeti[i][sutun];

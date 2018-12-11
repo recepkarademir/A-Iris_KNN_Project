@@ -1,18 +1,18 @@
 #include <iostream>
 #include <iomanip> 		// formatlý setw çýktýsý alabilmek için.
-#include "Knn.h"
-#include <conio.h>		// getc() için.
+#include <conio.h>		// getch() için.
 using namespace std;
 
 float komsulukFarkHesapla(int k,int egitimSeti,int dogrulamaSeti, float veriSeti[][5],int veriNitelik)// komþuluk farklarý hesaplanacak.
 {
+	//veriSeti adresi yeni bir diziye atanýyor. Artýk yeni ve orijinal dizi birbirinden etkilenir.
+	system("cls");
 	cout<<"K = "<<k<<"  En yakýn "<<k<<" tane komþu incelendi ve tahminler yapýldý.";
 	
 	float tmpFark=0 , toplamFark=0;
 	// egitim seti verileri veri seti karýþýk olduðu için ilk [0..74] elemanlarý olarak kullanýlacak.
 	float farkDizisi[dogrulamaSeti][egitimSeti];  // farklar bu dizide tutulacak
 	// egitimSeti=75 deðerini tutuyor.   
-	int sutun=0;
 	// egitim seti [0..74] arasýnda , doðrulamseti [75..112] arasýnda   , testSeti  [113..149]  arasýnda
 	
 	
@@ -22,7 +22,7 @@ float komsulukFarkHesapla(int k,int egitimSeti,int dogrulamaSeti, float veriSeti
 			{
 				tmpFark=0;
 				toplamFark=0;
-				tmpFark = ( (veriSeti[j][sutun]) - (veriSeti[i][sutun]) );
+				tmpFark = ( (veriSeti[j][0]) - (veriSeti[i][0]) );
 				if(tmpFark<0)
 				{
 					toplamFark+=(-1*tmpFark); // farklarýn negatif olmamasý gerekli. vektör uzaklýðý negatif olmaz.
@@ -32,7 +32,7 @@ float komsulukFarkHesapla(int k,int egitimSeti,int dogrulamaSeti, float veriSeti
 					toplamFark+=tmpFark;
 				}
 				
-				tmpFark = ((veriSeti[j][sutun+1])  - (veriSeti[i][sutun+1]) );
+				tmpFark = ((veriSeti[j][1])  - (veriSeti[i][1]) );
 				if(tmpFark<0)
 				{
 					toplamFark+=(-1*tmpFark); // farklarýn negatif olmamasý gerekli. vektör uzaklýðý negatif olmaz.
@@ -42,7 +42,7 @@ float komsulukFarkHesapla(int k,int egitimSeti,int dogrulamaSeti, float veriSeti
 					toplamFark+=tmpFark;
 				}
 				
-				tmpFark = ( (veriSeti[j][sutun+2]) - (veriSeti[i][sutun+2]) );
+				tmpFark = ( (veriSeti[j][2]) - (veriSeti[i][2]) );
 				if(tmpFark<0)
 				{
 					toplamFark+=(-1*tmpFark); // farklarýn negatif olmamasý gerekli. vektör uzaklýðý negatif olmaz.
@@ -52,7 +52,7 @@ float komsulukFarkHesapla(int k,int egitimSeti,int dogrulamaSeti, float veriSeti
 					toplamFark+=tmpFark;
 				}
 				
-				tmpFark = ( (veriSeti[j][sutun+3]) - (veriSeti[i][sutun+3]) );
+				tmpFark = ( (veriSeti[j][3]) - (veriSeti[i][3]) );
 				if(tmpFark<0)
 				{
 					toplamFark+=(-1*tmpFark); // farklarýn negatif olmamasý gerekli. vektör uzaklýðý negatif olmaz.
@@ -73,6 +73,7 @@ float komsulukFarkHesapla(int k,int egitimSeti,int dogrulamaSeti, float veriSeti
 	float geciciFark[dogrulamaSeti][egitimSeti];
 	// veriler en yakýn komþu hesaplarken bozuluyor. Korunmasý ve guncel veri seti listelemesinin yapýldýðýnda bozulmuþ verilerin görünmemesi için.
 	copy(&farkDizisi[0][0], &farkDizisi[0][0]+dogrulamaSeti*egitimSeti,&geciciFark[0][0]); // dizi tamamen klonlanýyor.
+	// çok boyutlu bir dizi kopyalanýrken copy() kullanýlabilir. memcpy() de kullanýlabilir
 	// geciciFark dizisi her doðrulama verisi için en yakýn k tane komþusunun indisini tutuyor.
 	
 	
@@ -202,15 +203,7 @@ float komsulukFarkHesapla(int k,int egitimSeti,int dogrulamaSeti, float veriSeti
 	// þimdi orijinal doðrulamadaki iris adýyla tahmin iris adlarýný kýyaslayýp tahmin yüzdesini çýktý olarak verelim.
 	double tahminYuzde=00.00;
 	
-	
 
-	
-	
-	
-	
-	
-	
-	
 	for(int i=egitimSeti,j=0; i<(egitimSeti+dogrulamaSeti);++i)// doðrulama setindeki satýradaki verielerle tahmin verileri karþýlaþtýrýlýyor.
 	{			
 		if(veriSeti[i][4]==agirlikliTahmin[j][0]) // her doðru tahmin için tahmin yüzdesi artýrýlýr.
@@ -225,8 +218,8 @@ float komsulukFarkHesapla(int k,int egitimSeti,int dogrulamaSeti, float veriSeti
 	cout<<"Doðruluk oraný % "<<tahminYuzde<<endl;
 
 
-	cout<<"\n\nTahmin ve gerçek deðerlerin kýyaslanmasýný görmek için 1 e bas ";
-	cout<<"\n\nKýyaslanmayý listelemeyip devam etmek için herhangi bir tuþa basýn : ";
+	cout<<"\n\nTahmin ve gerçek deðerleri görmek için 1 e bas ";
+	cout<<"\n\nKýyaslanmayý listelemeyip menüye dönmek için herhangi bir tuþa basýn : ";
 	char yazdirma='0';
 	yazdirma=getch();
 	if(yazdirma=='1')
@@ -276,12 +269,5 @@ float komsulukFarkHesapla(int k,int egitimSeti,int dogrulamaSeti, float veriSeti
 		}	
 	}
 	
-
-	
-	/*cout<<"\nDevam etmek için bir tuþa bas...";
-	
-	
-	
-	system("pause");*/
 	return tahminYuzde;
 }

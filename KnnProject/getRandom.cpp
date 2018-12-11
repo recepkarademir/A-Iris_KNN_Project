@@ -1,19 +1,17 @@
 #include <iostream>
 #include <cstdlib>		/* srand() ile veri setini rastgele karýþtýrmak için*/
 #include <ctime>		/* time  gerçek rastgele sayýlarýn üretimini zamana baðlama.  */
-#include "getRandom.h"
 //#include <algorithm>  //  kýsa sort kodlarý için test amaçlý.
 
 using namespace std;
 
 void getRandomFonk(float veriSeti[][5] , int veriAdet)
 {
-	int sutun=0;
-	int RastGeleSayi;
+	int sutun=0 , RastGeleSayi;
 	short temprastgele[veriAdet];
 	float tempsepalL[veriAdet] , tempsepalW[veriAdet] , temppetalL[veriAdet] , temppetalW[veriAdet] , tempirisName[veriAdet];
 	bool ekle=false;
-	srand((unsigned)time(NULL)); // zmana baðlý rastgele sayý üretme.
+	srand((unsigned)time(NULL)); // zamana baðlý rastgele sayý üretme.
 	
 	for(int kar=0;kar<3;++kar)
 	{
