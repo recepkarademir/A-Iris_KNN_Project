@@ -41,7 +41,6 @@ Okunan txt verilerinden Iris adları bellekte işlem kolaylığı olması amaçl
 0 kodu iris-setosa , 1 kodu iris-versicolor , 2 kodu iris-virginica olarak bellekte tutulacaklar.
 Program içerisinde iris adlarının kodları yerine adların kendilerini metin olarak göreceğiz.
 
-UYGULAMA
 ------------------------------
 ![knn=3](Knn_example.jpg)
 
