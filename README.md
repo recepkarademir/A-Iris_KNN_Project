@@ -1,6 +1,6 @@
 ![logo](http://covartech.github.io/prtdoc/prtDocGettingStartedExamples_06.png) [![License](https://img.shields.io/badge/license-MIT-green.svg?style=flat)](https://github.com/recepkarademir/A-Iris_KNN_Project/blob/master/LICENSE)
 
-![](https://img.shields.io/vaadin-directory/v/:packageName.svg)
+![(https://img.shields.io/vaadin-directory/v/vaadinvaadin-grid.svg)]
 # Veri Madenciliği
 Iris veri setini sınıflandırma
 ------------------------------
