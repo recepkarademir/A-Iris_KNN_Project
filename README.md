@@ -1,9 +1,8 @@
-![logo](http://covartech.github.io/prtdoc/prtDocGettingStartedExamples_06.png) [![License](https://img.shields.io/badge/license-MIT-green.svg?style=flat)](https://github.com/recepkarademir/A-Iris_KNN_Project/blob/master/LICENSE)
+![3D_dataset](3d_dataset.png) [![License](https://img.shields.io/badge/license-MIT-green.svg?style=flat)](https://github.com/recepkarademir/A-Iris_KNN_Project/blob/master/LICENSE)
 
-# Veri Madenciliği
-Iris veri setini sınıflandırma
+# Iris veri setini sınıflandırma
 ------------------------------
-2018 Ekim
+2018 Aralık v3.0.2
 
 Recep KARADEMİR
 ____________________________________________________________________________________________________________________________________
@@ -17,6 +16,7 @@ Bu proje C++ programlama dilinde, K-En Yakın Komşu algoritması kullanılarak 
 Program iris.txt içindeki iris çiçeği verilerini üç sete ayırarak işlem yapmaktadır.
 İlk iki seti programı eğitme amaçlı kullanan, üçüncü seti ise koruyarak test amaçlı tutan bir program yazılmıştır.
 Okuduğu veri setini istersek karıştırarak işleyebiliriz(her veri setinde her iris sınıfından örnekler bulunması için).
+Program v2.0 güncellemesinden sonra test setindeki bir veriyi tahmin etme işlemini de yapabilmektedir.
 
 ------------------------------
 
@@ -41,7 +41,7 @@ Program içerisinde iris adlarının kodları yerine adların kendilerini metin 
 
 UYGULAMA
 ------------------------------
-![logo](Knn_example.jpg)
+![knn=3](Knn_example.jpg)
 
 
 K değerinin incelenmesi
@@ -54,7 +54,7 @@ Bunun sebebi tür adetinden fazla k değeri girildiğinde komşuluk farkının b
 
 Yaptığım testler sonucu en iyi k değerlerinin 1,2,3,4,5 civarı değerler olduğunu buldum.
 en kötü değerler ise 35 ve üzeri k değerleri için oldu.
-Kod parçası , algoritma işleyişi ve bu doküman hakkindaki bütün sorularınızı bana iletebilirsiniz.
+Kod parçası , algoritma işleyişi ve bu doküman hakkindaki bütün sorularınızı bana iletebilirsiniz.<br/>
 ___________________________________________________________________________________________________________________________________
 
 İletişim
