@@ -1,9 +1,9 @@
 ![logo](http://covartech.github.io/prtdoc/prtDocGettingStartedExamples_06.png) [![License](https://img.shields.io/badge/license-MIT-green.svg?style=flat)](https://github.com/recepkarademir/A-Iris_KNN_Project/blob/master/LICENSE)
-
+https://img.shields.io/vaadin-directory/v/vaadinvaadin-grid.svg
 # Veri Madenciliği
 Iris veri setini sınıflandırma
 ------------------------------
-2018 Ekim
+2018 Aralık
 
 Recep KARADEMİR
 ____________________________________________________________________________________________________________________________________
@@ -17,6 +17,7 @@ Bu proje C++ programlama dilinde, K-En Yakın Komşu algoritması kullanılarak 
 Program iris.txt içindeki iris çiçeği verilerini üç sete ayırarak işlem yapmaktadır.
 İlk iki seti programı eğitme amaçlı kullanan, üçüncü seti ise koruyarak test amaçlı tutan bir program yazılmıştır.
 Okuduğu veri setini istersek karıştırarak işleyebiliriz(her veri setinde her iris sınıfından örnekler bulunması için).
+Program v2.0 güncellemesinden sonra test setindeki bir veriyi tahmin etme işlemini de yapabilmektedir.
 
 ------------------------------
 
