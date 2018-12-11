@@ -1,4 +1,4 @@
-![logo](http://covartech.github.io/prtdoc/prtDocGettingStartedExamples_06.png) [![License](https://img.shields.io/badge/license-MIT-green.svg?style=flat)](https://github.com/recepkarademir/A-Iris_KNN_Project/blob/master/LICENSE)
+![3D_dataset](3d_dataset.png) [![License](https://img.shields.io/badge/license-MIT-green.svg?style=flat)](https://github.com/recepkarademir/A-Iris_KNN_Project/blob/master/LICENSE)
 
 # Iris veri setini sınıflandırma
 ------------------------------
@@ -41,7 +41,7 @@ Program içerisinde iris adlarının kodları yerine adların kendilerini metin 
 
 UYGULAMA
 ------------------------------
-![logo](Knn_example.jpg)
+![knn=3](Knn_example.jpg)
 
 
 K değerinin incelenmesi
