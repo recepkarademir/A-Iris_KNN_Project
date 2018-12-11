@@ -9,6 +9,8 @@ ________________________________________________________________________________
 
 Özet:
 ------------------------------
+Projenin detaylı raporu için Iris_KNN_Projesi.pdf dosyasını inceleyin.
+
 IRIS : Süsengiller (Iris), Asparagales takımına ait bir çiçekli bitki familyasıdır.
 Iris familyasındaki üç türün temel özelliklerinden oluşan veriler yardımıyla,
 en iyi tür tahmini yapabilen K (KNN) tespiti yapabileceğimiz program yazılmıştır.
