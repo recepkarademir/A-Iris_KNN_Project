@@ -20,7 +20,7 @@
 
 using namespace std;
 
-
+// Program modüler olmadýðý için bazý özellikleri hýzlý çalýþýyor.
 
 // Global deðiþkenler bütün fomksiyonlardan eriþilebilir.
 void espri();
