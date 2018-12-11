@@ -54,7 +54,7 @@ Bunun sebebi tür adetinden fazla k değeri girildiğinde komşuluk farkının b
 
 Yaptığım testler sonucu en iyi k değerlerinin 1,2,3,4,5 civarı değerler olduğunu buldum.
 en kötü değerler ise 35 ve üzeri k değerleri için oldu.
-Kod parçası , algoritma işleyişi ve bu doküman hakkindaki bütün sorularınızı bana iletebilirsiniz.
+Kod parçası , algoritma işleyişi ve bu doküman hakkindaki bütün sorularınızı bana iletebilirsiniz.<br/>
 Program versiyonu v3.0.2
 ___________________________________________________________________________________________________________________________________
 
