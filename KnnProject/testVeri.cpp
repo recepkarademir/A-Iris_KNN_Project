@@ -280,7 +280,7 @@ void testVeriFonk(int egitimSeti,int dogrulamaSeti,int testSeti , float veriSeti
 	}
 	else
 	{
-		cout<<"Programýn genel tahmin doðruluk oraný  k = "<<kEgitim<<" için  % "<<tahminYuzde<<endl;
+		cout<<"Programýn genel tahmin doðruluk oraný  k = "<<kEgitim<<" için  % "<<tahminYuzde<<" bulunmuþtu."<<endl;
 	}
 	
 	cout<<"Yanlýþ tahminin yanýnda X bulunur.\n============================================================================\n";
