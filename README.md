@@ -1,6 +1,7 @@
 ![3D_dataset](3d_dataset.png) [![License](https://img.shields.io/badge/license-MIT-green.svg?style=flat)](https://github.com/recepkarademir/A-Iris_KNN_Project/blob/master/LICENSE)
 
-# Iris veri setini sınıflandırma
+# IRIS classification using KNN
+# Iris veri setini KNN ile sınıflandırma
 ------------------------------
 2018 Aralık v3.0.2
 
