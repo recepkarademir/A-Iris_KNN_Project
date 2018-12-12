@@ -195,7 +195,8 @@ void testVeriFonk(int egitimSeti,int dogrulamaSeti,int testSeti , float veriSeti
 	{
 		
 		cout<<tahmin[0][a]<<endl;
-	}*/
+	}
+	*/
 	
 	int agirlikliTahmin[1][1];
 	int enBuyuk=0 , enBuyukIndis=0; // burada iris adýnýn aðýrlýklý olarak hangisi olduðunu buluyoruz.
@@ -208,6 +209,7 @@ void testVeriFonk(int egitimSeti,int dogrulamaSeti,int testSeti , float veriSeti
 				enBuyuk=tahmin[0][r];
 				enBuyukIndis=r;
 			}
+			
 		}
 		
 		if(enBuyukIndis==0) // en agirlikli iris adý taminini karar olarak kaydediyor.
@@ -224,45 +226,51 @@ void testVeriFonk(int egitimSeti,int dogrulamaSeti,int testSeti , float veriSeti
 		}
 	
 		float tahminYuzdeTest=0.0;
-		 
-		tahminYuzdeTest = (100.0/k)*tahmin[0][enBuyukIndis];
+	
+		cout<<"Aþaðýdaki yüzdelik deðeri en yüksek olan iris adý tahminimiz olacak.\n";
+		tahminYuzdeTest = (100.0/k)*tahmin[0][0];
+		cout<<"En yakýn komþularýn %"<<tahminYuzdeTest<<"\'ý Iris-setosa"<<endl;
+		tahminYuzdeTest = (100.0/k)*tahmin[0][1];
+		cout<<"En yakýn komþularýn %"<<tahminYuzdeTest<<"\'ý Iris-versicolor"<<endl;
+		tahminYuzdeTest = (100.0/k)*tahmin[0][2];
+		cout<<"En yakýn komþularýn %"<<tahminYuzdeTest<<"\'ý Iris-virginica"<<endl;
 		// þimdi orijinal test edilecek test verisinin iris adýyla tahmin yüzdesini çýktý olarak verelim.
 		cout<<endl<<setw(3)<<testVeriIndisi+1<<". sýra ("<<setw(3)<<testVeriIndisi<<".indisteki)"<<" Test verisinin iris adý : "<<setw(14);
 
-		if(veriSeti[testVeriIndisi][4]==0)
-		{
-			cout<<"Iris-setosa";
-		}
-		else if(veriSeti[testVeriIndisi][4]==1)
-		{
-			cout<<"Iris-versicolor";
-		}
-		else if(veriSeti[testVeriIndisi][4]==2)
-		{
-			cout<<"Iris-virginica";
-		}
+	if(veriSeti[testVeriIndisi][4]==0)
+	{
+		cout<<"Iris-setosa";
+	}
+	else if(veriSeti[testVeriIndisi][4]==1)
+	{
+		cout<<"Iris-versicolor";
+	}
+	else if(veriSeti[testVeriIndisi][4]==2)
+	{
+		cout<<"Iris-virginica";
+	}
 		
-		cout<<"   "<<"Tahmin edilen iris adý : "<<setw(14);
-		if(agirlikliTahmin[0][0]==0)
-		{
-			cout<<"Iris-setosa";
-		}
-		else if(agirlikliTahmin[0][0]==1)
-		{
-			cout<<"Iris-versicolor";
-		}
-		else if(agirlikliTahmin[0][0]==2)
-		{
-			cout<<"Iris-virginica";
-		}
-		if(veriSeti[testVeriIndisi][4]==agirlikliTahmin[0][0])
-		{
-			cout<<endl;
-		}
-		else
-		{
-			cout<<" X "<<endl;
-		}
+	cout<<"   "<<"Tahmin edilen iris adý : "<<setw(14);
+	if(agirlikliTahmin[0][0]==0)
+	{
+		cout<<"Iris-setosa";
+	}
+	else if(agirlikliTahmin[0][0]==1)
+	{
+		cout<<"Iris-versicolor";
+	}
+	else if(agirlikliTahmin[0][0]==2)
+	{
+		cout<<"Iris-virginica";
+	}
+	if(veriSeti[testVeriIndisi][4]==agirlikliTahmin[0][0])
+	{
+		cout<<endl;
+	}
+	else
+	{
+		cout<<" X "<<endl;
+	}
 		
 
 	cout<<"\n\n============================================================================\n";
@@ -275,7 +283,6 @@ void testVeriFonk(int egitimSeti,int dogrulamaSeti,int testSeti , float veriSeti
 		cout<<"Programýn genel tahmin doðruluk oraný  k = "<<kEgitim<<" için  % "<<tahminYuzde<<endl;
 	}
 	
-	cout<<"Test setindeki verinin k="<<k<<" için tahmin doðruluk oraný % "<<tahminYuzdeTest<<endl;
 	cout<<"Yanlýþ tahminin yanýnda X bulunur.\n============================================================================\n";
 	cout<<"\nDevam etmek için bir tuþa bas...";
 	

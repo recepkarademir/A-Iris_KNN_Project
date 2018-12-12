@@ -59,7 +59,8 @@ int main()
 	
 	while(true) // Kullanýcýnýn modül seçim ekranýnda gezinebilmesini saðlayan döngü.
 	{
-		cout<<"\n\n\nVerilerin güncel halini listelemek için.................. 1 e bas "<<endl;
+		cout<<"\n\n\n";
+		cout<<"Verilerin güncel halini listelemek için.................. 1 e bas "<<endl;
 		cout<<"Verilerin normalize edilmesi için........................ 2 ye bas"<<endl;
 		cout<<"Verilerin yerlerini karýþtýrmak(3 defa karýþtýrýlýr) için 3 e bas"<<endl;
 		cout<<"K-Nearest Neighbor (en yakýn komþu) algoritmasý için..... 4 e bas"<<endl;
