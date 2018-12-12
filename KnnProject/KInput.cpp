@@ -21,7 +21,7 @@ short enYakinKomsuAlgoritmasi(int egitimSeti, int veriAdet)
 	}
 	else	// k deðeri [1 ile eðitimSetiVeriAdeti] arasýnda bir deðer olabilir.
 	{
-		K_ISTE2:cout<<"\nKaç yakýn komþu için tahmin yürütülmesini istiyorsun ( [1 , eðitimSetiVeriAdeti ] arasý deðer gir) ";
+		K_ISTE2:cout<<"\nKaç yakýn komþu için tahmin yürütülmesini istiyorsun ( [1 , "<<egitimSeti<<" ] arasý deðer gir) ";
 		cout<<"\nDegeri girip entera bas : \n";
 		cin>>k;
 		

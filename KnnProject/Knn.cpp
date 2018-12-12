@@ -219,7 +219,7 @@ float komsulukFarkHesapla(int k,int egitimSeti,int dogrulamaSeti, float veriSeti
 
 
 	cout<<"\n\nTahmin ve gerçek deðerleri görmek için 1 e bas ";
-	cout<<"\n\nKýyaslanmayý listelemeyip menüye dönmek için herhangi bir tuþa basýn : ";
+	cout<<"\n\nMenüye dönmek için herhangi bir tuþa basýn : ";
 	char yazdirma='0';
 	yazdirma=getch();
 	if(yazdirma=='1')
