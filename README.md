@@ -3,7 +3,7 @@
 # IRIS classification using KNN
 # Iris veri setini KNN ile sınıflandırma
 ------------------------------
-2018 Aralık v3.1.1
+2018 Aralık v3.1.3
 
 Recep KARADEMİR
 ____________________________________________________________________________________________________________________________________
@@ -57,7 +57,7 @@ Bunun sebebi tür adetinden fazla k değeri girildiğinde komşuluk farkının b
 Yaptığım testler sonucu en iyi k değerlerinin 1,2,3,4,5 gibi değerler olduğunu buldum.
 en kötü değerler ise 35 ve üzeri k değerleri için oldu.
 Test setindeki başarı oranı, eğitim+doğrulama seti tahmin başarı oranından daha fazla oldu. Bunun sebebi test setinde 
-kontrol edilen örnek sayısının fazla olmasıydı. Fakat öngörülen ve gerçek tahmin yüzdeleri 
+kontrol edilen örnek sayısının fazla olmasıydı. 
 Kod parçası , algoritma işleyişi ve bu doküman hakkindaki bütün sorularınızı bana iletebilirsiniz.<br/>
 ___________________________________________________________________________________________________________________________________
 
