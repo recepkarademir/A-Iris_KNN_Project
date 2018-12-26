@@ -168,27 +168,27 @@ void testVeriFonk(int egitimSeti,int dogrulamaSeti,int testSeti , float veriSeti
 		
 	short irisKodu; // en yakın komşunun veri setindeki iris kodunu geçici tutmak için.
 	
-		for(int j=0;j<k;++j) // her sütundaki iris adını kontrol edip iris adlarının sayısını tahmin dizisinde tutuyor.
+	for(int j=0;j<k;++j) // her sütundaki iris adını kontrol edip iris adlarının sayısını tahmin dizisinde tutuyor.
+	{
+		// enKucukKNN[i][j] = en küçük verilerin konumlarının tutuldukları dizi. 
+		irisKodu = veriSeti[(enKucukKNN[0][j])][4];// bu satırda en yakın komşunun veri setindeki iris kodunu öğrenmemizi sağlar.4 =iris adının tutulduğu sütünlar
+		if(irisKodu==0)
 		{
-			// enKucukKNN[i][j] = en küçük verilerin konumlarının tutuldukları dizi. 
-			irisKodu = veriSeti[(enKucukKNN[0][j])][4];// bu satırda en yakın komşunun veri setindeki iris kodunu öğrenmemizi sağlar.4 =iris adının tutulduğu sütünlar
-			if(irisKodu==0)
-			{
-				tahmin[0][0]++;
-			}
-			else if(irisKodu==1)
-			{
-				tahmin[0][1]++;
-			}
-			else if(irisKodu==2)
-			{
-				tahmin[0][2]++;
-			}
-			else
-			{
-				cout<<"\nIris ismi bellekte düzgün olarak kodlanmamış ! \n";
-			}
+			tahmin[0][0]++;
 		}
+		else if(irisKodu==1)
+		{
+			tahmin[0][1]++;
+		}
+		else if(irisKodu==2)
+		{
+			tahmin[0][2]++;
+		}
+		else
+		{
+			cout<<"\nIris ismi bellekte düzgün olarak kodlanmamış ! \n";
+		}
+	}
 				
 	// TEST AMAÇLI
 	/*for(int a=0;a<3;++a)
@@ -201,41 +201,41 @@ void testVeriFonk(int egitimSeti,int dogrulamaSeti,int testSeti , float veriSeti
 	int agirlikliTahmin[1][1];
 	int enBuyuk=0 , enBuyukIndis=0; // burada iris adının ağırlıklı olarak hangisi olduğunu buluyoruz.
 
-		enBuyuk = tahmin[0][0];
-		for(int r=0;r<3;++r)
+	enBuyuk = tahmin[0][0];
+	for(int r=0;r<3;++r)
+	{
+		if(tahmin[0][r]>=enBuyuk)
 		{
-			if(tahmin[0][r]>=enBuyuk)
-			{
-				enBuyuk=tahmin[0][r];
-				enBuyukIndis=r;
-			}
-			
+			enBuyuk=tahmin[0][r];
+			enBuyukIndis=r;
 		}
 		
-		if(enBuyukIndis==0) // en agirlikli iris adı taminini karar olarak kaydediyor.
-		{
-			agirlikliTahmin[0][0]=0;
-		}
-		else if(enBuyukIndis==1)
-		{
-			agirlikliTahmin[0][0]=1;
-		}
-		else if(enBuyukIndis==2)
-		{
-			agirlikliTahmin[0][0]=2;
-		}
-	
-		float tahminYuzdeTest=0.0;
-	
-		cout<<"Aşağıdaki yüzdelik değeri en yüksek olan iris adı tahminimiz olacak.\n";
-		tahminYuzdeTest = (100.0/k)*tahmin[0][0];
-		cout<<"En yakın komşuların %"<<tahminYuzdeTest<<"\'ı Iris-setosa"<<endl;
-		tahminYuzdeTest = (100.0/k)*tahmin[0][1];
-		cout<<"En yakın komşuların %"<<tahminYuzdeTest<<"\'ı Iris-versicolor"<<endl;
-		tahminYuzdeTest = (100.0/k)*tahmin[0][2];
-		cout<<"En yakın komşuların %"<<tahminYuzdeTest<<"\'ı Iris-virginica"<<endl;
-		// şimdi orijinal test edilecek test verisinin iris adıyla tahmin yüzdesini çıktı olarak verelim.
-		cout<<endl<<setw(3)<<testVeriIndisi+1<<". sıra ("<<setw(3)<<testVeriIndisi<<".indisteki)"<<" Test verisinin iris adı : "<<setw(14);
+	}
+		
+	if(enBuyukIndis==0) // en agirlikli iris adı taminini karar olarak kaydediyor.
+	{
+		agirlikliTahmin[0][0]=0;
+	}
+	else if(enBuyukIndis==1)
+	{
+		agirlikliTahmin[0][0]=1;
+	}
+	else if(enBuyukIndis==2)
+	{
+		agirlikliTahmin[0][0]=2;
+	}
+
+	float tahminYuzdeTest=0.0;
+
+	cout<<"Aşağıdaki yüzdelik değeri en yüksek olan iris adı tahmin olacaktır.\n";
+	tahminYuzdeTest = (100.0/k)*tahmin[0][0];
+	cout<<"En yakın komşuların %"<<tahminYuzdeTest<<"\'ı Iris-setosa"<<endl;
+	tahminYuzdeTest = (100.0/k)*tahmin[0][1];
+	cout<<"En yakın komşuların %"<<tahminYuzdeTest<<"\'ı Iris-versicolor"<<endl;
+	tahminYuzdeTest = (100.0/k)*tahmin[0][2];
+	cout<<"En yakın komşuların %"<<tahminYuzdeTest<<"\'ı Iris-virginica"<<endl;
+	// şimdi orijinal test edilecek test verisinin iris adıyla tahmin yüzdesini çıktı olarak verelim.
+	cout<<endl<<setw(3)<<testVeriIndisi+1<<". sıra ("<<setw(3)<<testVeriIndisi<<".indisteki)"<<" Test verisinin iris adı : "<<setw(14);
 
 	if(veriSeti[testVeriIndisi][4]==0)
 	{
@@ -274,16 +274,17 @@ void testVeriFonk(int egitimSeti,int dogrulamaSeti,int testSeti , float veriSeti
 		
 
 	cout<<"\n\n============================================================================\n";
+	cout<<"Yanlış tahminin yanında X bulunur.\n";
 	if(tahminYuzde==-1.0)
 	{
-		cout<<"Programın genel tahmin doğruluk oranı bilinmiyor !"<<endl;
+		cout<<"Programın öngörülen tahmin doğruluk oranı bilinmiyor !"<<endl;
 	}
 	else
 	{
-		cout<<"Programın genel tahmin doğruluk oranı  k = "<<kEgitim<<" için  % "<<tahminYuzde<<" bulunmuştu."<<endl;
+		cout<<"Programın öngörülen tahmin doğruluk oranı  k = "<<kEgitim<<" için  % "<<tahminYuzde<<endl;
 	}
 	
-	cout<<"Yanlış tahminin yanında X bulunur.\n============================================================================\n";
+	cout<<"============================================================================\n";
 	cout<<"\nDevam etmek için bir tuşa bas...";
 	
 	system("pause");

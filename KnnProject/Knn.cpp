@@ -18,51 +18,51 @@ float komsulukFarkHesapla(int k,int egitimSeti,int dogrulamaSeti, float veriSeti
 	
 	for(int z=0 , i=(egitimSeti);z<dogrulamaSeti;++z , ++i) // doðrulama veri setindeki her satýrdaki veriler için deðerlerinin eðitim setindeki deðerlerden farkýný toplayýp farkDizisine atýyor.
 	{
-			for(int j=0;j<egitimSeti;++j)// her bir doðrulama verisi için eðitim setindeki bütün verilerden farkýný farkDizisinde tutmaya çalýþýyor.
+		for(int j=0;j<egitimSeti;++j)// her bir doðrulama verisi için eðitim setindeki bütün verilerden farkýný farkDizisinde tutmaya çalýþýyor.
+		{
+			tmpFark=0;
+			toplamFark=0;
+			tmpFark = ( (veriSeti[j][0]) - (veriSeti[i][0]) );
+			if(tmpFark<0)
 			{
-				tmpFark=0;
-				toplamFark=0;
-				tmpFark = ( (veriSeti[j][0]) - (veriSeti[i][0]) );
-				if(tmpFark<0)
-				{
-					toplamFark+=(-1*tmpFark); // farklarýn negatif olmamasý gerekli. vektör uzaklýðý negatif olmaz.
-				}
-				else
-				{
-					toplamFark+=tmpFark;
-				}
-				
-				tmpFark = ((veriSeti[j][1])  - (veriSeti[i][1]) );
-				if(tmpFark<0)
-				{
-					toplamFark+=(-1*tmpFark); // farklarýn negatif olmamasý gerekli. vektör uzaklýðý negatif olmaz.
-				}
-				else
-				{
-					toplamFark+=tmpFark;
-				}
-				
-				tmpFark = ( (veriSeti[j][2]) - (veriSeti[i][2]) );
-				if(tmpFark<0)
-				{
-					toplamFark+=(-1*tmpFark); // farklarýn negatif olmamasý gerekli. vektör uzaklýðý negatif olmaz.
-				}
-				else
-				{
-					toplamFark+=tmpFark;
-				}
-				
-				tmpFark = ( (veriSeti[j][3]) - (veriSeti[i][3]) );
-				if(tmpFark<0)
-				{
-					toplamFark+=(-1*tmpFark); // farklarýn negatif olmamasý gerekli. vektör uzaklýðý negatif olmaz.
-				}
-				else
-				{
-					toplamFark+=tmpFark;
-				}
-				farkDizisi[z][j] = toplamFark;
+				toplamFark+=(-1*tmpFark); // farklarýn negatif olmamasý gerekli. vektör uzaklýðý negatif olmaz.
 			}
+			else
+			{
+				toplamFark+=tmpFark;
+			}
+			
+			tmpFark = ((veriSeti[j][1])  - (veriSeti[i][1]) );
+			if(tmpFark<0)
+			{
+				toplamFark+=(-1*tmpFark); // farklarýn negatif olmamasý gerekli. vektör uzaklýðý negatif olmaz.
+			}
+			else
+			{
+				toplamFark+=tmpFark;
+			}
+			
+			tmpFark = ( (veriSeti[j][2]) - (veriSeti[i][2]) );
+			if(tmpFark<0)
+			{
+				toplamFark+=(-1*tmpFark); // farklarýn negatif olmamasý gerekli. vektör uzaklýðý negatif olmaz.
+			}
+			else
+			{
+				toplamFark+=tmpFark;
+			}
+				
+			tmpFark = ( (veriSeti[j][3]) - (veriSeti[i][3]) );
+			if(tmpFark<0)
+			{
+				toplamFark+=(-1*tmpFark); // farklarýn negatif olmamasý gerekli. vektör uzaklýðý negatif olmaz.
+			}
+			else
+			{
+				toplamFark+=tmpFark;
+			}
+			farkDizisi[z][j] = toplamFark;
+		}
 	}
 	
 	
@@ -219,7 +219,7 @@ float komsulukFarkHesapla(int k,int egitimSeti,int dogrulamaSeti, float veriSeti
 
 
 	cout<<"\n\nTahmin ve gerçek deðerleri görmek için 1 e bas ";
-	cout<<"\n\nMenüye dönmek için herhangi bir tuþa basýn : ";
+	cout<<"\n\nKýyaslanmayý listelemeyip menüye dönmek için herhangi bir tuþa basýn : ";
 	char yazdirma='0';
 	yazdirma=getch();
 	if(yazdirma=='1')
@@ -228,35 +228,34 @@ float komsulukFarkHesapla(int k,int egitimSeti,int dogrulamaSeti, float veriSeti
 		cout<<"\nDoðrulama setindeki verilerin gerçek ve tahmini deðerleri  \n\n"<<endl;
 		for(int i=egitimSeti,j=0; i<(egitimSeti+dogrulamaSeti);++i)// doðrulama setindeki satýradaki verielerle tahmin verileri karþýlaþtýrýlýyor.
 		{		
-		
-				cout<<setw(3)<<j+1<<". ("<<setw(3)<<i<<".indisteki)"<<" Doðrulama verisinin iris adý : "<<setw(17);
-				
-				if(veriSeti[i][4]==0)
-				{
-					cout<<"Iris-setosa";
-				}
-				else if(veriSeti[i][4]==1)
-				{
-					cout<<"Iris-versicolor";
-				}
-				else if(veriSeti[i][4]==2)
-				{
-					cout<<"Iris-virginica";
-				}
-				
-				cout<<"     "<<"Tahmin edilen iris adý : "<<setw(17);
-				if(agirlikliTahmin[j][0]==0)
-				{
-					cout<<"Iris-setosa";
-				}
-				else if(agirlikliTahmin[j][0]==1)
-				{
-					cout<<"Iris-versicolor";
-				}
-				else if(agirlikliTahmin[j][0]==2)
-				{
-					cout<<"Iris-virginica";
-				}
+			cout<<setw(3)<<j+1<<". ("<<setw(3)<<i<<".indisteki)"<<" Doðrulama verisinin iris adý : "<<setw(17);
+			
+			if(veriSeti[i][4]==0)
+			{
+				cout<<"Iris-setosa";
+			}
+			else if(veriSeti[i][4]==1)
+			{
+				cout<<"Iris-versicolor";
+			}
+			else if(veriSeti[i][4]==2)
+			{
+				cout<<"Iris-virginica";
+			}
+			
+			cout<<"     "<<"Tahmin edilen iris adý : "<<setw(17);
+			if(agirlikliTahmin[j][0]==0)
+			{
+				cout<<"Iris-setosa";
+			}
+			else if(agirlikliTahmin[j][0]==1)
+			{
+				cout<<"Iris-versicolor";
+			}
+			else if(agirlikliTahmin[j][0]==2)
+			{
+				cout<<"Iris-virginica";
+			}
 			if(veriSeti[i][4]==agirlikliTahmin[j][0]) // her doðru tahmin için tahmin yüzdesi artýrýlýr.
 			{
 				cout<<endl;
