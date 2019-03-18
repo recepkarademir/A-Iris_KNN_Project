@@ -58,7 +58,7 @@ Yaptığım testler sonucu en iyi k değerlerinin 1,2,3,4,5 gibi değerler oldu�
 <br/>En kötü değerler ise 35 ve üzeri k değerleri için oldu.<br/>
 Test setindeki başarı oranı, eğitim+doğrulama seti tahmin başarı oranından daha fazla.<br/> Bunun sebebi test setinde 
 kontrol edilen örnek sayısının fazla olmasıydı. 
-<br/>Kod parçası , algoritma işleyişi ve bu doküman hakkındaki bütün sorularınızı bana iletebilirsiniz.<br/>
+<br/>Kod parçası , algoritma işleyişi ve bu doküman hakkındaki sorularınızı bana iletebilirsiniz.<br/>
 ___________________________________________________________________________________________________________________________________
 
 İletişim
