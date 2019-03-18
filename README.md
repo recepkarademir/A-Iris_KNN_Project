@@ -26,17 +26,17 @@ Program v2.0 güncellemesinden sonra test setindeki bir veriyi tahmin etme işle
 
 GİRİŞ
 ------------------------------
-Program iris.txt içindeki iris çiçeği verilerini üç sete ayırarak işlem yapmaktadır.
-İlk seti eğitim seti olarak saklar. İlk set toplam veri setinin %50 sini oluşturacak şekilde ayrılır.
-Rastgele karıştırılan verinin ilk % 50 lik kısmı program tarafından eğitim seti olur.
+Program iris.txt içindeki iris çiçeği verilerini üç sete ayırarak işlem yapmaktadır.<br/>
+İlk seti eğitim seti olarak saklar. İlk set toplam veri setinin %50 sini oluşturacak şekilde ayrılır.<br/>
+Rastgele karıştırılan verinin ilk % 50 lik kısmı program tarafından eğitim seti olur.<br/>
 ikinci seti toplam veri setinin %25'ini (%50 lik kısmın üstündeki %25 lik kısım) ve
-üçüncü seti toplam veri setinin %25(%75 den sonraki kalan %25 lik kısım) 'ini oluşturacak şekilde ayırır.
-İlk %50 lik set eğitim setimizdir. İkinci %25 lik set doğrulama setimizdir. Üçüncü %25 lik set test setimizdir.
-Doğrulama setinin ilk indisi, 150 adet veri içeren veri setinde 75.indis olacaktır.
-Test setinin ilk indisi , 150 adet veri içeren veri setinde 113.indis olacaktır.
-Eğitim seti [0..74] verileridir. Doğrulama seti [75..112] verileri olacaktır. Test seti [113..149] indislerideki veriler olur.
-Veriler txt içerisinde aralarında boş satır olmayacak şekilde bulunmalıdır.
-Her satırdaki iris özellikleri aralarına virgül koyularak ayrılmış olmalıdır.
+üçüncü seti toplam veri setinin %25(%75 den sonraki kalan %25 lik kısım) 'ini oluşturacak şekilde ayırır.<br/>
+İlk %50 lik set eğitim setimizdir. İkinci %25 lik set doğrulama setimizdir. Üçüncü %25 lik set test setimizdir.<br/>
+Doğrulama setinin ilk indisi, 150 adet veri içeren veri setinde 75.indis olacaktır.<br/>
+Test setinin ilk indisi , 150 adet veri içeren veri setinde 113.indis olacaktır.<br/>
+Eğitim seti [0..74] verileridir. Doğrulama seti [75..112] verileri olacaktır. Test seti [113..149] indislerideki veriler olur.<br/>
+Veriler txt içerisinde aralarında boş satır olmayacak şekilde bulunmalıdır.<br/>
+Her satırdaki iris özellikleri aralarına virgül koyularak ayrılmış olmalıdır.<br/>
 
 Okunan txt verilerinden Iris adları bellekte işlem kolaylığı olması amaçlı 0 ,1 ,2 olacak şekilde kodlanarak tutuluyor.<br/>
 0 kodu iris-setosa , 1 kodu iris-versicolor , 2 kodu iris-virginica olarak bellekte tutulacaklar.
