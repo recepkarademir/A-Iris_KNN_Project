@@ -34,11 +34,11 @@ ikinci seti toplam veri setinin %25'ini (%50 lik kısmın üstündeki %25 lik k�
 İlk %50 lik set eğitim setimizdir. İkinci %25 lik set doğrulama setimizdir. Üçüncü %25 lik set test setimizdir.
 Doğrulama setinin ilk indisi, 150 adet veri içeren veri setinde 75.indis olacaktır.
 Test setinin ilk indisi , 150 adet veri içeren veri setinde 113.indis olacaktır.
-Eğitim seti [0..74] verileridir. Doğrulama seti [75..112] verileri olacaktır. Test seti [113..149] indislerdeki veriler olur.
+Eğitim seti [0..74] verileridir. Doğrulama seti [75..112] verileri olacaktır. Test seti [113..149] indislerideki veriler olur.
 Veriler txt içerisinde aralarında boş satır olmayacak şekilde bulunmalıdır.
 Her satırdaki iris özellikleri aralarına virgül koyularak ayrılmış olmalıdır.
 
-Okunan txt verilerinden Iris adları bellekte işlem kolaylığı olması amaçlı 0 ,1 ,2 olacak şekilde kodlanarak tutuluyor.
+Okunan txt verilerinden Iris adları bellekte işlem kolaylığı olması amaçlı 0 ,1 ,2 olacak şekilde kodlanarak tutuluyor.<br/>
 0 kodu iris-setosa , 1 kodu iris-versicolor , 2 kodu iris-virginica olarak bellekte tutulacaklar.
 Program içerisinde iris adlarının kodları yerine adların kendilerini metin olarak göreceğiz.
 
@@ -58,7 +58,7 @@ Yaptığım testler sonucu en iyi k değerlerinin 1,2,3,4,5 gibi değerler oldu�
 <br/>En kötü değerler ise 35 ve üzeri k değerleri için oldu.<br/>
 Test setindeki başarı oranı, eğitim+doğrulama seti tahmin başarı oranından daha fazla.<br/> Bunun sebebi test setinde 
 kontrol edilen örnek sayısının fazla olmasıydı. 
-<br/>Kod parçası , algoritma işleyişi ve bu doküman hakkindaki bütün sorularınızı bana iletebilirsiniz.<br/>
+<br/>Kod parçası , algoritma işleyişi ve bu doküman hakkındaki bütün sorularınızı bana iletebilirsiniz.<br/>
 ___________________________________________________________________________________________________________________________________
 
 İletişim
