@@ -74,4 +74,4 @@ https://recepkarademir.blogspot.com.tr
 
 https://recepkarademir.wordpress.com
 
-## BU PROJENİN KULLANILABİLİRLİK SEVİYESİ: 8/10
+## BU PROJENİN KULLANILABİLİRLİK SEVİYESİ: 7/10
