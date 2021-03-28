@@ -64,11 +64,7 @@ ________________________________________________________________________________
 İletişim
 ------------------------------
 
-2015141003@cumhuriyet.edu.tr
-
 recepkarademir0018@gmail.com
-
-www.recepkarademir.com
 
 https://recepkarademir.blogspot.com.tr
 
