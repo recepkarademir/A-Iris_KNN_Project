@@ -61,13 +61,5 @@ kontrol edilen örnek sayısının fazla olmasıydı.
 <br/>Kod parçası , algoritma işleyişi ve bu doküman hakkındaki sorularınızı bana iletebilirsiniz.<br/>
 ___________________________________________________________________________________________________________________________________
 
-İletişim
-------------------------------
-
-recepkarademir0018@gmail.com
-
-https://recepkarademir.blogspot.com.tr
-
-https://recepkarademir.wordpress.com
 
 ## BU PROJENİN KULLANILABİLİRLİK SEVİYESİ: 7/10
